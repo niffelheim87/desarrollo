@@ -13,10 +13,10 @@ class BibliotecaPrestamos(models.Model):
     def _check_fecha_prestamo(self):
         for prestamo in self:
             if prestamo.fecha_prestamo > fields.Date.today():
-                raise models.ValidationError('La fecha de prestamo no puede ser posterior a la fecha actual.')
+                raise models.ValidationError('La fecha de préstamo no puede ser posterior a la fecha actual.')
             
     @api.constrains('fecha_devolucion')
     def _check_fecha_devolucion(self):
         for prestamo in self:
             if prestamo.fecha_devolucion < fields.Date.today():
-                raise models.ValidationError('La fecha de prestamo no puede ser anterior a la fecha actual.')
+                raise models.ValidationError('La fecha de devolución no puede ser anterior a la fecha actual.')

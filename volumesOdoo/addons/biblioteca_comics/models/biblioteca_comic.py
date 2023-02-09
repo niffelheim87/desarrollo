@@ -118,8 +118,6 @@ class BibliotecaComic(models.Model):
                 raise models.ValidationError(
                     'La fecha de lanzamiento debe ser anterior a la actual')
 
-    @api.onchange('socio_id')
-    def _onchange_socio_id(self):
-        self.estado = 'prestado' if self.socio_id else 'disponible'
+    
         
    
