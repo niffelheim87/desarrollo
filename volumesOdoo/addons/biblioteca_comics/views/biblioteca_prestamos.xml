@@ -13,37 +13,34 @@
 
     <!-- Simple menu item -->
     <menuitem name="Prestamos" id="biblioteca_prestamos_menu" parent="biblioteca_base_menu" action="biblioteca_prestamos_action"/>
-
-
     <!-- Vista árbol (tree view) -->
-<record id="biblioteca_prestamos_tree_view" model="ir.ui.view">
-    <field name="name">Lista de prestamo de comics</field>
-    <field name="model">biblioteca.prestamos</field>
-    <field name="arch" type="xml">
-        <tree>
-            <field name="comic_id"/>
-            <field name="socio_id"/>
-            <field name="fecha_prestamo"/>
-            <field name="fecha_devolucion"/>
-        </tree>
-    </field>
-</record>
-
-<!-- Vista formulario (form view) -->
-<record id="biblioteca_prestamos_form_view" model="ir.ui.view">
-    <field name="name">Formulario de prestamos de comics</field>
-    <field name="model">biblioteca.prestamos</field>
-    <field name="arch" type="xml">
-        <form>
-            <group>
+    <record id="biblioteca_prestamos_tree_view" model="ir.ui.view">
+        <field name="name">Lista de prestamo de comics</field>
+        <field name="model">biblioteca.prestamos</field>
+        <field name="arch" type="xml">
+            <tree>
                 <field name="comic_id"/>
                 <field name="socio_id"/>
                 <field name="fecha_prestamo"/>
                 <field name="fecha_devolucion"/>
-            </group>
-        </form>
-    </field>
-</record>
+            </tree>
+        </field>
+    </record>
+    <!-- Vista formulario (form view) -->
+    <record id="biblioteca_prestamos_form_view" model="ir.ui.view">
+        <field name="name">Formulario de prestamos de comics</field>
+        <field name="model">biblioteca.prestamos</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="comic_id"/>
+                    <field name="socio_id"/>
+                    <field name="fecha_prestamo"/>
+                    <field name="fecha_devolucion"/>
+                </group>
+            </form>
+        </field>
+    </record>
 
 
 </odoo>
