@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definimos como mostramos la vista en el modelo -->
+    <record id='biblioteca_socios_action' model='ir.actions.act_window'>
+        <field name="name">Socios de la biblioteca</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">biblioteca.socios</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Simple menu item, sin más utilidad que la didáctica -->
+    <menuitem name="Socios" id="biblioteca_socios_menu" parent="biblioteca_base_menu" action="biblioteca_socios_action"/>
+
+
+    <!-- Definición de la vista Tree -->
+    <record id="biblioteca_socios_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Socios de la biblioteca</field>
+        <field name="model">biblioteca.socios</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <!--<field name="comic_id" widget="many2many_tags"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="biblioteca_socios_view_form" model="ir.ui.view">
+        <field name="name">Formulario de Socios de la biblioteca</field>
+        <field name="model">biblioteca.socios</field>
+        <field name="arch" type="xml">
+            <form string="formulario_tareas">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellidos"/>
+                    </group>
+                    <!--<notebook>
+                        <page string="Comics">
+                          <field name="comic_id">
+                            <tree>
+                              <field name="nombre"/>
+                              <field name="estado"/>
+                            </tree>
+                          </field>
+                        </page>
+                      </notebook>-->
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+</odoo>
