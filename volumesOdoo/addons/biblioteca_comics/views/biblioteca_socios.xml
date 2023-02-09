@@ -24,7 +24,7 @@
                 <field name="id"/>
                 <field name="nombre"/>
                 <field name="apellidos"/>
-                <!--<field name="comic_id" widget="many2many_tags"/>-->
+                <field name="comic_id" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -39,7 +39,7 @@
                         <field name="nombre"/>
                         <field name="apellidos"/>
                     </group>
-                    <!--<notebook>
+                    <notebook>
                         <page string="Comics">
                           <field name="comic_id">
                             <tree>
@@ -48,7 +48,7 @@
                             </tree>
                           </field>
                         </page>
-                      </notebook>-->
+                      </notebook>
                 </sheet>
 
 
