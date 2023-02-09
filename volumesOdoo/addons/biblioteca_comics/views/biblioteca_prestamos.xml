@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definimos como mostramos la vista en el modelo -->
+    <record id='biblioteca_prestamos_action' model='ir.actions.act_window'>
+        <field name="name">Prestamos de la biblioteca</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">biblioteca.prestamos</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Simple menu item -->
+    <menuitem name="Prestamos" id="biblioteca_prestamos_menu" parent="biblioteca_base_menu" action="biblioteca_prestamos_action"/>
+
+
+    <!-- Vista árbol (tree view) -->
+<record id="biblioteca_prestamos_tree_view" model="ir.ui.view">
+    <field name="name">Lista de prestamo de comics</field>
+    <field name="model">biblioteca.prestamos</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="comic_id"/>
+            <field name="socio_id"/>
+            <field name="fecha_prestamo"/>
+            <field name="fecha_devolucion"/>
+        </tree>
+    </field>
+</record>
+
+<!-- Vista formulario (form view) -->
+<record id="biblioteca_prestamos_form_view" model="ir.ui.view">
+    <field name="name">Formulario de prestamos de comics</field>
+    <field name="model">biblioteca.prestamos</field>
+    <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="comic_id"/>
+                <field name="socio_id"/>
+                <field name="fecha_prestamo"/>
+                <field name="fecha_devolucion"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+</odoo>

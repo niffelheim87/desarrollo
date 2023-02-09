@@ -23,8 +23,7 @@
             <tree>
                 <field name="id"/>
                 <field name="nombre"/>
-                <field name="apellidos"/>
-                <field name="comic_id" widget="many2many_tags"/>
+                <field name="apellido"/>
             </tree>
         </field>
     </record>
@@ -35,20 +34,14 @@
         <field name="arch" type="xml">
             <form string="formulario_tareas">
                 <sheet>
-                    <group>
-                        <field name="nombre"/>
-                        <field name="apellidos"/>
-                    </group>
                     <notebook>
-                        <page string="Comics">
-                          <field name="comic_id">
-                            <tree>
-                              <field name="nombre"/>
-                              <field name="estado"/>
-                            </tree>
-                          </field>
+                        <page string="Socio">
+                            <group>
+                                <field name="nombre"/>
+                                <field name="apellido"/>
+                            </group>
                         </page>
-                      </notebook>
+                    </notebook>
                 </sheet>
 
 
