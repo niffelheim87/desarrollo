@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+    <!-- actions opening views on models -->
+    <!-- Acciones al abrir las vistas en los modelos 
+    https://www.odoo.com/documentation/14.0/developer/reference/addons/actions.html
+    -->
+    <record model="ir.actions.act_window" id="action_hospital_pacientes">
+      <!-- -->
+      <field name="name">Listado de pacientes pendientes</field>
+      <!-- Nombre del modelo que mostraremos en la vista-->
+      <field name="res_model">hospital_pacientes</field>
+      <!-- indicamos que nuestro formulario tendrá vista tree (para mostrar todos los datos
+      y vista form (para crear o editar datos)
+      La vista Form no la definimos, por lo cual tendremos la version automatica.
+      La vista tree la definiremos mas abajo.
+      -->
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item 
+    En este ejemplo, todo el menu de "menuitem" esta puesto como ejemplo, no hace una función concreta
+    -->
+    <menuitem name="Listado de pacientes" id="hospital_pacientes_menu_root" />
+
+    <!-- menu categories -->
+    <menuitem name="Opciones Lista pacientes" id="hospital_pacientes_menu_1" parent="hospital_pacientes_menu_root" />
+
+    <!-- actions -->
+    <menuitem name="Mostrar lista" id="hospital_pacientes_menu_1_list" parent="hospital_pacientes_menu_1" action="action_hospital_pacientes" />
+
+
+    <!-- Odoo puede colocar vistas automaticas, aunque con un aspecto y funcionalidad mejorable
+    Nosotros, para afinarlo, explicaremos de manera explicita como es cada vista -->
+
+    <!-- Definimos como es la vista explicita de la lista-->
+    <record model="ir.ui.view" id="hospital_pacientes_tree">
+      <field name="name">Lista de pacientes</field>
+      <field name="model">hospital_pacientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre_completo" string="Paciente" />
+          <field name="sintomas" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="hospital_pacientes_form">
+      <field name="name">Lista de pacientes</field>
+      <field name="model">hospital_pacientes</field>
+      <field name="arch" type="xml">
+        <form string="formulario_pacientes">
+          <sheet>
+            <notebook>
+                <page string="Socio">
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellido"/>
+                    </group>
+                    <group>
+                      <field name="sintomas" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </notebook>
+        </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

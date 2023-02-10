@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_hospital_pacientes,hospital_pacientes_default,model_hospital_pacientes,base.group_user,1,1,1,1
+acl_hospital_sintomas,hospital_sintomas_default,model_hospital_sintomas,base.group_user,1,1,1,1

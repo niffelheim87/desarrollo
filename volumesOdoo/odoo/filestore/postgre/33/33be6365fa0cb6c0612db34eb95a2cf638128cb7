@@ -39,7 +39,7 @@ var rendered=fuzzy.match(pattern,str,opts);if(rendered!=null){prev[prev.length]=
 return prev;},[]).sort(function(a,b){var compare=b.score-a.score;if(compare)return compare;return a.index-b.index;});};}());;
 
 /* <inline asset> defined in bundle 'web.assets_backend' */
-odoo._modules=["base","web","biblioteca_comics","auth_totp","base_import","web_editor","web_kanban_gauge","web_tour"];;
+odoo._modules=["base","web","auth_totp","base_import","web_editor","web_kanban_gauge","web_tour"];;
 
 /* /web/static/lib/py.js/lib/py.js defined in bundle 'web.assets_backend' */
 var py={};(function(py){var create=function(o,props){function F(){}
